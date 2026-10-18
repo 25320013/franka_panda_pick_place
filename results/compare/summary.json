@@ -1,0 +1,75 @@
+{
+ "mink": {
+  "episodes": 25,
+  "successes": 23,
+  "success_rate": 0.92,
+  "failures": {
+   "planned_pose_collision": 1,
+   "ik_no_solution": 1
+  },
+  "plan_time_mean_s": 1.0409,
+  "plan_time_median_s": 0.1887,
+  "plan_iters_mean": 1143.6,
+  "iters_per_converged_waypoint_mean": 2.64,
+  "exec_ik_ms_per_step_mean": 3.326,
+  "min_table_clear_mm": 13.95,
+  "min_tray_clear_mm": 4.81,
+  "min_cube_tray_clear_mm": 21.45,
+  "min_joint_margin_rad": 0.4856,
+  "joint_limit_hits": 0,
+  "vel_violations": 0,
+  "max_vel_ratio": 0.718,
+  "max_tcp_lag_mm": 24.67,
+  "max_settled_err_mm": 3.42,
+  "settle_time_mean_s": 0.0
+ },
+ "dls": {
+  "episodes": 25,
+  "successes": 23,
+  "success_rate": 0.92,
+  "failures": {
+   "planned_pose_collision": 1,
+   "ik_no_solution": 1
+  },
+  "plan_time_mean_s": 0.3,
+  "plan_time_median_s": 0.1618,
+  "plan_iters_mean": 1254.5,
+  "iters_per_converged_waypoint_mean": 3.6,
+  "exec_ik_ms_per_step_mean": 0.25,
+  "min_table_clear_mm": 10.99,
+  "min_tray_clear_mm": 1.41,
+  "min_cube_tray_clear_mm": 21.46,
+  "min_joint_margin_rad": 0.4804,
+  "joint_limit_hits": 0,
+  "vel_violations": 0,
+  "max_vel_ratio": 0.427,
+  "max_tcp_lag_mm": 58.35,
+  "max_settled_err_mm": 4.84,
+  "settle_time_mean_s": 0.023
+ },
+ "qp": {
+  "episodes": 25,
+  "successes": 20,
+  "success_rate": 0.8,
+  "failures": {
+   "ik_no_solution": 2,
+   "planned_pose_collision": 2,
+   "collision": 1
+  },
+  "plan_time_mean_s": 0.2616,
+  "plan_time_median_s": 0.2703,
+  "plan_iters_mean": 1620.8,
+  "iters_per_converged_waypoint_mean": 4.1,
+  "exec_ik_ms_per_step_mean": 0.199,
+  "min_table_clear_mm": 0.87,
+  "min_tray_clear_mm": 6.09,
+  "min_cube_tray_clear_mm": 21.61,
+  "min_joint_margin_rad": 0.4808,
+  "joint_limit_hits": 0,
+  "vel_violations": 0,
+  "max_vel_ratio": 0.435,
+  "max_tcp_lag_mm": 156.98,
+  "max_settled_err_mm": 4.99,
+  "settle_time_mean_s": 0.051
+ }
+}

@@ -1,0 +1,74 @@
+{
+ "episode": 22,
+ "run": "baseline",
+ "reason": "ik_no_solution",
+ "phase": "lift",
+ "detail": "lift: pos err 15.4 mm, ori err 0.002 rad",
+ "cube_pose": [
+  0.6676343903223967,
+  -0.0084050720007105,
+  0.42500000000000004,
+  0.9779904932005908,
+  0.0,
+  0.0,
+  -0.20864945532942342
+ ],
+ "arm_qpos": [
+  -0.01186,
+  0.6526,
+  -0.00212,
+  -0.46805,
+  0.00143,
+  1.12278,
+  1.19287,
+  0.04,
+  0.04
+ ],
+ "target_tcp": [
+  0.66763,
+  -0.00841,
+  0.575
+ ],
+ "achieved_tcp": [
+  0.65569,
+  -0.00826,
+  0.56551
+ ],
+ "pos_err_mm": 15.429093820807537,
+ "ori_err_rad": 0.002137081615219903,
+ "grasp_yaw_deg": -24.086437232462657,
+ "grasp_tilt_deg": 0.0,
+ "joint_limit_margin_rad": 0.3982480148421059,
+ "waypoints": [
+  {
+   "phase": "pre_grasp",
+   "converged": true,
+   "ik_iters": 6,
+   "pos_err_mm": 1.09,
+   "ori_err_rad": 0.0002,
+   "table_clearance_mm": 75.99,
+   "box_clearance_mm": 109.14,
+   "joint_limit_margin_rad": 0.5933
+  },
+  {
+   "phase": "descend",
+   "converged": true,
+   "ik_iters": 3,
+   "pos_err_mm": 0.29,
+   "ori_err_rad": 0.0001,
+   "table_clearance_mm": 15.61,
+   "box_clearance_mm": 116.18,
+   "joint_limit_margin_rad": 1.2644
+  },
+  {
+   "phase": "lift",
+   "converged": false,
+   "ik_iters": 500,
+   "pos_err_mm": 15.43,
+   "ori_err_rad": 0.0021,
+   "table_clearance_mm": 62.02,
+   "box_clearance_mm": 82.34,
+   "joint_limit_margin_rad": 0.3982
+  }
+ ]
+}

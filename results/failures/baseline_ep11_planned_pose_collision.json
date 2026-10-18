@@ -1,0 +1,64 @@
+{
+ "episode": 11,
+ "run": "baseline",
+ "reason": "planned_pose_collision",
+ "phase": "descend",
+ "detail": "descend: hand -3.9 mm from box",
+ "cube_pose": [
+  0.49147842702273825,
+  0.009933524250669165,
+  0.42500000000000004,
+  0.966065779689223,
+  0.0,
+  0.0,
+  0.25829616588995963
+ ],
+ "arm_qpos": [
+  0.15911,
+  -0.22279,
+  -0.12618,
+  -2.06679,
+  -0.02917,
+  1.84568,
+  0.30671,
+  0.04,
+  0.04
+ ],
+ "target_tcp": [
+  0.49148,
+  0.00993,
+  0.425
+ ],
+ "achieved_tcp": [
+  0.49115,
+  0.00995,
+  0.42445
+ ],
+ "pos_err_mm": 0.6498094263493197,
+ "ori_err_rad": 0.0003001483827274389,
+ "grasp_yaw_deg": 29.937973288805786,
+ "grasp_tilt_deg": 0.0,
+ "joint_limit_margin_rad": 1.00500649446845,
+ "waypoints": [
+  {
+   "phase": "pre_grasp",
+   "converged": true,
+   "ik_iters": 3,
+   "pos_err_mm": 0.22,
+   "ori_err_rad": 0.0001,
+   "table_clearance_mm": 135.57,
+   "box_clearance_mm": 59.22,
+   "joint_limit_margin_rad": 1.3502
+  },
+  {
+   "phase": "descend",
+   "converged": true,
+   "ik_iters": 2,
+   "pos_err_mm": 0.65,
+   "ori_err_rad": 0.0003,
+   "table_clearance_mm": 15.18,
+   "box_clearance_mm": -3.94,
+   "joint_limit_margin_rad": 1.005
+  }
+ ]
+}

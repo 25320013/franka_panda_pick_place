@@ -1,0 +1,15 @@
+Episodes            : 3
+Successes           : 1 (33 %)
+Failures            : 2
+    ik_no_solution          : 2
+
+Planning time (s)   : mean 0.069, max 0.091
+Planning IK iters   : mean 338, max 500
+Execution wall time : mean 12.71 s (1 executed episodes)
+
+Successful episodes, worst-case margins:
+    table clearance  : 16.1 mm
+    box clearance    : 30.9 mm
+    joint-limit      : 0.716 rad
+    TCP lag (moving) : 20.1 mm (max)
+    TCP err (settled): 3.2 mm (max)

@@ -1,0 +1,8 @@
+mujoco>=3.2
+mink
+qpsolvers[daqp]
+numpy
+matplotlib
+imageio
+imageio-ffmpeg
+pillow

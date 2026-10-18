@@ -1,0 +1,17 @@
+metric,mink
+Success rate,0.4
+Mean planning time (s),0.2379
+Planning IK iterations / episode (mean),207.6
+IK iterations / converged waypoint (mean),2.58
+IK compute per control step (ms),3.761
+Min robot-table clearance (mm),15.99
+Min robot-tray clearance (mm),12.85
+Min cube-tray clearance (mm),21.45
+Min joint-limit margin (rad),0.4885
+Joint-limit hits (steps),0
+Velocity-limit violations (steps),0
+Peak joint speed / limit,0.352
+Max TCP tracking lag (mm),19.72
+Max settled TCP error (mm),3.2
+"Extra settle time / episode (s, mean)",0.0
+Failures,"{""ik_no_solution"": 10, ""planned_pose_collision"": 5}"

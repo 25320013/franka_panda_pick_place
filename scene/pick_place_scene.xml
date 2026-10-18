@@ -1,0 +1,73 @@
+<mujoco model="Franka Panda Pick and Place">
+
+    <!--
+      Franka Panda + table + ball + open-top box.
+      Place this file in mujoco_menagerie/franka_emika_panda/ (same folder
+      as scene.xml) so the robot mesh paths resolve.
+
+      All key positions (robot base at world origin):
+        Table top surface   : z = 0.400 m   (x 0.20..0.80, y -0.25..0.25)
+                              Table moved +0.10 m in x vs. table.xml: with its
+                              edge at x = 0.10 the Panda's link1/link2 hit the
+                              tabletop (it sits at shoulder height).
+        Ball (pick)         : (0.45, -0.12, 0.425)   radius 0.025 m
+        Box  (place)        : centre (0.45, 0.15), floor at z = 0.400,
+                              inner cavity 0.12 x 0.12 m, wall height 0.08 m
+      Both were verified with verify_pick_place.py: every top-down gripper
+      pose needed for the task is reachable, collision-free, at all 16 yaws.
+    -->
+
+    <include file="/home/iitgn-robotics/Pant/mujoco_menagerie/franka_emika_panda/scene.xml"/>
+    <!-- Mesh paths made absolute so this file can live in any folder.
+         If your mujoco_menagerie is elsewhere, edit the two paths above/below. -->
+    <compiler meshdir="/home/iitgn-robotics/Pant/mujoco_menagerie/franka_emika_panda/assets" texturedir="/home/iitgn-robotics/Pant/mujoco_menagerie/franka_emika_panda/assets"/>
+
+    <option timestep="0.002" cone="elliptic" impratio="10"/>
+
+    <worldbody>
+
+        <!-- ============================ TABLE ============================ -->
+        <body name="table" pos="0.50 0.00 0.375">
+            <geom name="tabletop" type="box" size="0.30 0.25 0.025"
+                  rgba="0.45 0.32 0.20 1" friction="1 0.005 0.0001"/>
+            <geom name="table_leg_1" type="box" size="0.025 0.025 0.175" pos="-0.25 -0.20 -0.20" rgba="0.35 0.35 0.35 1"/>
+            <geom name="table_leg_2" type="box" size="0.025 0.025 0.175" pos="-0.25  0.20 -0.20" rgba="0.35 0.35 0.35 1"/>
+            <geom name="table_leg_3" type="box" size="0.025 0.025 0.175" pos=" 0.25 -0.20 -0.20" rgba="0.35 0.35 0.35 1"/>
+            <geom name="table_leg_4" type="box" size="0.025 0.025 0.175" pos=" 0.25  0.20 -0.20" rgba="0.35 0.35 0.35 1"/>
+        </body>
+
+        <!-- ============================= BALL ============================
+             Diameter 5 cm fits easily in the Panda gripper (8 cm max opening).
+             condim=6 adds rolling friction so it does not roll away on its own. -->
+        <body name="ball" pos="0.45 -0.12 0.425">
+            <freejoint name="ball_joint"/>
+            <geom name="ball_geom" type="sphere" size="0.025" mass="0.05"
+                  rgba="0.85 0.10 0.10 1" condim="6"
+                  friction="1.5 0.01 0.001" solref="0.01 1"/>
+            <site name="ball_site" size="0.004" rgba="1 1 1 1"/>
+        </body>
+
+        <!-- ============================== BOX ============================
+             Open-top container fixed to the table (no joint -> it cannot be
+             knocked over). Body origin = centre of the box floor's top face. -->
+        <body name="box" pos="0.45 0.15 0.400">
+            <geom name="box_floor" type="box" size="0.07 0.07 0.005" pos="0 0 0.005"
+                  rgba="0.15 0.35 0.75 1"/>
+            <geom name="box_wall_px" type="box" size="0.005 0.07 0.04" pos=" 0.065 0 0.04" rgba="0.15 0.35 0.75 1"/>
+            <geom name="box_wall_nx" type="box" size="0.005 0.07 0.04" pos="-0.065 0 0.04" rgba="0.15 0.35 0.75 1"/>
+            <geom name="box_wall_py" type="box" size="0.06 0.005 0.04" pos="0  0.065 0.04" rgba="0.15 0.35 0.75 1"/>
+            <geom name="box_wall_ny" type="box" size="0.06 0.005 0.04" pos="0 -0.065 0.04" rgba="0.15 0.35 0.75 1"/>
+            <site name="box_drop_site" pos="0 0 0.135" size="0.006" rgba="0 1 0 0.6"/>
+        </body>
+
+    </worldbody>
+
+    <!-- Start pose: arm above the table, gripper open. 9 robot qpos + 7 ball qpos. -->
+    <keyframe>
+        <key name="pick_place_home"
+             qpos="0 -0.785398 0 -2.356194 0 1.570796 0.785398 0.04 0.04
+                   0.45 -0.12 0.425 1 0 0 0"
+             ctrl="0 -0.785398 0 -2.356194 0 1.570796 0.785398 255"/>
+    </keyframe>
+
+</mujoco>

@@ -1,0 +1,50 @@
+<mujoco model="Franka Panda with Table">
+
+    <include file="/home/iitgn-robotics/Pant/mujoco_menagerie/franka_emika_panda/scene.xml"/>
+
+    <worldbody>
+
+        <body name="table" pos="0.40 0.00 0.375">
+
+            <geom
+                name="tabletop"
+                type="box"
+                size="0.30 0.25 0.025"
+                pos="0 0 0"
+                rgba="0.45 0.32 0.20 1"
+                contype="1"
+                conaffinity="1"/>
+
+            <geom
+                name="table_leg_1"
+                type="box"
+                size="0.025 0.025 0.175"
+                pos="-0.25 -0.20 -0.20"
+                rgba="0.35 0.35 0.35 1"/>
+
+            <geom
+                name="table_leg_2"
+                type="box"
+                size="0.025 0.025 0.175"
+                pos="-0.25 0.20 -0.20"
+                rgba="0.35 0.35 0.35 1"/>
+
+            <geom
+                name="table_leg_3"
+                type="box"
+                size="0.025 0.025 0.175"
+                pos="0.25 -0.20 -0.20"
+                rgba="0.35 0.35 0.35 1"/>
+
+            <geom
+                name="table_leg_4"
+                type="box"
+                size="0.025 0.025 0.175"
+                pos="0.25 0.20 -0.20"
+                rgba="0.35 0.35 0.35 1"/>
+
+        </body>
+
+    </worldbody>
+
+</mujoco>
